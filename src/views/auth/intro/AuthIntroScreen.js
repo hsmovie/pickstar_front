@@ -66,7 +66,7 @@ class IntroScreen extends Component {
           <ButtonWithoutFeedback
             viewStyle={buttonStyle}
             textStyle={{ ...buttonTextStyle, color: '#ff6791' }}
-            onPress={() => this.navigate('login')}
+            onPress={() => this.navigate('authLogin')}
           >
             시작하기
           </ButtonWithoutFeedback>
@@ -76,7 +76,7 @@ class IntroScreen extends Component {
           des="SNS를 이용하여 로그인을 하시면 출첵 하트를 지급 받을 수 있습니다."
           modalVisible={this.state.modalVisible}
           leftButtonFn={() => navigationService.navigate('Main')}
-          rightButtonFn={() => this.navigate('login')}
+          rightButtonFn={() => this.navigate('authLogin')}
           leftButtonText="둘러보기"
           rightButtonText="로그인"
           closeModalFn={() => this.closeConfirmModal()}
