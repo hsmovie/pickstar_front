@@ -1,5 +1,8 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+
+
+import { MainGradationHeader } from '../../../components/header/MainGradationHeader';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -15,7 +18,9 @@ export default class RankScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>스타랭킹!</Text>
+        <View >
+          <MainGradationHeader/>
+        </View>
       </View>
     );
   }
@@ -24,8 +29,8 @@ export default class RankScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -38,4 +43,8 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  TopTabstyle:{
+    height: 50,
+    width: 100,
+  }
 });

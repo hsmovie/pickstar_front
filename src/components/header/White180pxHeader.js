@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   headerStyle: {
     height: 180,
     alignSelf: 'stretch',
-    backgroundColor: '#fff',
+    backgroundColor: '#777',
   },
   backArrowimageStyle: {
     height: 24,
