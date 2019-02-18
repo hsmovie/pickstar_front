@@ -8,10 +8,13 @@ class White180pxHeader extends Component {
   ImageConditionalRender = () => {
     if (this.props.backArrow) {
       return (
-        <ButtonWithFeedback>
+        <ButtonWithFeedback
+          onPress={() => navigationService.goBack()}
+          style={styles.backArrowButtonStyle}
+        >
           <Image
             source={backArrowImage}
-            style={styles.backArrowimageStyle}
+            // style={styles.backArrowImageStyle}
           />
         </ButtonWithFeedback>
       )
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     backgroundColor: '#fff',
   },
-  backArrowimageStyle: {
+  backArrowButtonStyle: {
     height: 24,
     width: 24,
     marginTop: 50,

@@ -1,11 +1,15 @@
 import { createStackNavigator } from 'react-navigation'
 
 import CurationSearchScreen from '../curation/search/CurationSearchScreen'
-import CurationCraeteScreen from '../curation/create/CurationCreateScreen'
+import CurationCreateInfoScreen from '../curation/create/CurationCreateInfoScreen'
+import CurationDatePickScreen from '../curation/create/CurationDatePickScreen'
+import CurationColorPickScreen from '../curation/create/CurationColorPickScreen'
 
 const CurationNavigator = createStackNavigator({
+  curationColorPick: CurationColorPickScreen,
+  curationDatePick: CurationDatePickScreen,
+  curationCreateInfo: CurationCreateInfoScreen,
   curationSearch: CurationSearchScreen,
-  curationCreate: CurationCraeteScreen,
 })
 
 export default CurationNavigator

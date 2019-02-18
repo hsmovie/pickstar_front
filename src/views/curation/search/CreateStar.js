@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { View, TouchableWithoutFeedback, Text } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import navigationService from '../../../utils/navigationService'
 import logo from '../../../assets/images/png/logo.png'
+import pinkPlusImage from '../../../assets/images/png/pink_plus.png'
+import { inject } from 'mobx-react'
 
+@inject("curationStore")
 class CreateStar extends Component {
   constructor(props) {
     super(props)
@@ -10,9 +13,9 @@ class CreateStar extends Component {
     }
   }
 
-
   pressButton() {
-    navigationService.navigate('create')
+    navigationService.navigate('curationCreateInfo')
+    this.props.curationStore.resetSelectedStarsAndSearch()
   }
 
   render() {
@@ -23,13 +26,14 @@ class CreateStar extends Component {
     } = styles
     return (
       <View style={containerStyle}>
-        <TouchableWithoutFeedback
+        <TouchableOpacity
           onPress={() => this.pressButton()}
         >
           <Image
-            source={logo}
+            source={pinkPlusImage}
+            style={styles.imageStyle}
           />
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
         <View style={textBoxStyle}>
           <Text style={textStyle}>찾고있는 나의 스타의 페이지가 없나요?</Text>
           <Text style={textStyle}>My 스타의 첫페이지를 만들어주세요.</Text>
@@ -53,6 +57,10 @@ const styles = {
     color: '#4a4a4a',
     textAlign: 'center',
   },
+  imageStyle: {
+    height: 56,
+    width: 56,
+  }
 }
 
 export default CreateStar

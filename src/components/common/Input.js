@@ -1,8 +1,8 @@
 import React from 'react'
-import { TextInput, View, Image } from 'react-native'
-import logo from '../../assets/images/png/logo.png'
+import { TextInput, View, Image, TouchableOpacity } from 'react-native'
+import searchGrayImage from '../../assets/images/png/search_gray.png'
 
-const Input = ({ value, onChangeText, placeholder, secureTextEntry, style }) => {
+const Input = ({ value, onChangeText, placeholder, secureTextEntry, style, noIcon, disabled }) => {
   const { inputStyle, containerStyle } = styles
   return (
     <View style={[containerStyle, style]}>
@@ -14,11 +14,17 @@ const Input = ({ value, onChangeText, placeholder, secureTextEntry, style }) => 
         value={value}
         onChangeText={onChangeText}
         underlineColorAndroid="#fff"
+        disabled={disabled}
       />
-      <Image
-        source={logo}
-        style={styles.searchImageStyle}
-      />
+      {
+        noIcon ? null
+        :
+        <TouchableOpacity style={styles.searchImageStyle}>
+          <Image
+            source={searchGrayImage}
+          />
+        </TouchableOpacity>
+      }
     </View>
   )
 }
@@ -31,7 +37,6 @@ const styles = {
     backgroundColor: '#fff',
     borderColor: '#e2e3e6',
     borderWidth: 1,
-    borderRadius: 25,
   },
   inputStyle: {
     color: '#000',
@@ -44,7 +49,6 @@ const styles = {
   searchImageStyle: {
     width: 20,
     height: 20,
-    borderWidth: 2,
     marginRight: 20,
   }
 }

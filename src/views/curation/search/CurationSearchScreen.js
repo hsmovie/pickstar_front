@@ -1,10 +1,13 @@
 import React, {Component} from 'react'
 import {StyleSheet, Text, View, Image, FlatList} from 'react-native'
 import { White180pxHeader } from '../../../components/header'
-import { Input } from '../../../components/common'
+import { Input, BottomButton } from '../../../components/common'
 import StarItem from './StarItem'
-import { inject, observer } from 'mobx-react'
+import CreateStar from './CreateStar'
 import ProgressCircle from 'react-native-progress/Circle'
+import { inject, observer } from 'mobx-react'
+import navigationService from '../../../utils/navigationService'
+
 
 @inject("curationStore")
 @observer
@@ -33,20 +36,28 @@ export default class App extends Component {
     const { flatListStyle } = styles
     const allRankData = this.props.curationStore.stars.slice()
     if (allRankData.length === 0) {
-      if (!this.state.isVisible) return null
-      return (
-        <View style={styles.progressCircleStyle}>
-          <ProgressCircle
-              size={40}
-              progress={0.5}
-              unfilledColor="#fff"
-              color="#ff457f"
-              thickness={2}
-              borderWidth={0}
-              indeterminate
-          />
-        </View>
-      )
+      if (this.props.curationStore.search.length === 0) {
+        if (!this.state.isVisible) return null
+        return (
+          <View style={styles.progressCircleStyle}>
+            <ProgressCircle
+                size={40}
+                progress={0.5}
+                unfilledColor="#fff"
+                color="#ff457f"
+                thickness={2}
+                borderWidth={0}
+                indeterminate
+            />
+          </View>
+        )
+      } else {
+        return (
+          <View style={styles.progressCircleStyle}>
+            <CreateStar />
+          </View>
+        )
+      }
     } else {
       return (
         <FlatList
@@ -60,11 +71,8 @@ export default class App extends Component {
     }
   }
 
-  renderLoadingCircle () {
-  }
-
   render() {
-    const { search, setSearch } = this.props.curationStore
+    const { search, setSearch, selectedStars } = this.props.curationStore
     return (
       <View style={styles.container}>
         <White180pxHeader text={"응원할 스타를\n선택해주세요"} skip></White180pxHeader>
@@ -74,6 +82,10 @@ export default class App extends Component {
           onChangeText={setSearch}
         />
         {this.renderList()}
+        <BottomButton
+          onPress={() => navigationService.navigate('mainRank')}
+          disabled={selectedStars.length === 0}
+        >{ selectedStars.length }명 선택완료</BottomButton>
       </View>
     );
   }
@@ -101,6 +113,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     marginBottom: 5,
+    borderRadius: 25,
   },
   flatListStyle: {
     paddingTop: 21,
@@ -108,5 +121,5 @@ const styles = StyleSheet.create({
   progressCircleStyle: {
     flex: 1,
     justifyContent: 'center'
-  }
-});
+  },
+})

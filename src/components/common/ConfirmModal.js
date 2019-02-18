@@ -26,7 +26,7 @@ class ConfirmModal extends Component {
       titleTextStyle,
       desTextStyle,
     } = styles
-    console.log(width, height)
+
     return (
       <Modal
         animationType="fade"
