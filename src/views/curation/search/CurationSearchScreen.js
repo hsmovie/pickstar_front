@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {StyleSheet, Text, View, Image, FlatList} from 'react-native'
+import {StyleSheet, Text, View, Image, FlatList, KeyboardAvoidingView} from 'react-native'
 import { White180pxHeader } from '../../../components/header'
 import { Input, BottomButton } from '../../../components/common'
 import StarItem from './StarItem'
@@ -53,9 +53,9 @@ export default class App extends Component {
         )
       } else {
         return (
-          <View style={styles.progressCircleStyle}>
+          <KeyboardAvoidingView style={styles.progressCircleStyle} behavior="padding">
             <CreateStar />
-          </View>
+          </KeyboardAvoidingView>
         )
       }
     } else {
@@ -116,10 +116,10 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   flatListStyle: {
-    paddingTop: 21,
+    // borderWidth: 2,
   },
   progressCircleStyle: {
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 })

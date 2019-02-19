@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { width } from '../../../utils/layout'
-import logo from '../../../assets/images/png/logo.png'
 import { inject, observer } from 'mobx-react'
+import checkImage from '../../../assets/images/png/check.png'
 
 @inject("curationStore")
 @observer
@@ -10,6 +10,17 @@ class StarItem extends Component {
   state = {
     isSelected: false
   }
+
+  componentDidMount () {
+    const { selectedStars } = this.props.curationStore
+    selectedStars.map((selectedStar) => {
+      if (selectedStar.rank === this.props.rankData.item.rank) {
+        this.setState({isSelected: true})
+        return
+      }
+    })
+  }
+
 
   handleStarSelect = () => () => {
     this.setState(prevState => ({isSelected: !prevState.isSelected}))
@@ -67,10 +78,14 @@ class StarItem extends Component {
           style={this.circleStyle()}
           onPress={this.handleStarSelect(rank)}
         >
-          <Image
-            source={logo}
-            style={imageStyle}
-          />
+          {
+            this.state.isSelected ?
+            <Image
+              source={checkImage}
+            />
+            :
+            null
+          }
         </TouchableOpacity>
         <Text style={textStyle}>
           {name.length > 4 ? `${name.substring(0, 4)}...` : name }

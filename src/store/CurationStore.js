@@ -8,9 +8,10 @@ export default class CurationStore {
   @observable stars = []
   @observable starType = ''
   @observable starGender = ''
-  @observable starName = ''
+  @observable starName = '워너원'
   @observable birthday = undefined
   @observable debutDate = undefined
+  @observable color = '#ff0000'
 
   constructor () {
     setTimeout(() => {
@@ -40,29 +41,14 @@ export default class CurationStore {
         return star.name.indexOf(this.search) > -1
       })
     }
-    console.log(this.stars)
-    console.log(this.search)
   }
 
-  @action setStarType = (type) => {
-    this.starType = type
-  }
-
-  @action setStarGender = (gender) => {
-    this.starGender = gender
-  }
-
-  @action setStarName = (name) => {
-    this.starName = name
-  }
-
-  @action setBirthday = (date) => {
-    this.birthday = date
-  }
-
-  @action setDebutDate = (date) => {
-    this.debutDate = date
-  }
+  @action setStarType = (type) => this.starType = type
+  @action setStarGender = (gender) => this.starGender = gender
+  @action setStarName = (name) => this.starName = name
+  @action setBirthday = (date) => this.birthday = date
+  @action setDebutDate = (date) => this.debutDate = date
+  @action setColor = (color) => this.color = color
 
   @action addSelectedStars (selectedStars) {
     this.selectedStars.push(selectedStars)
