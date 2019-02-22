@@ -3,7 +3,8 @@ import { Platform, Image } from 'react-native'
 import { createStackNavigator } from 'react-navigation'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 
-import RankScreen from './rank/MainRankScreen'
+import MainRankScreen from './rank/MainRankScreen'
+import MainRankStarScreen from './rank/star/MainRankStarScreen'
 import NewsFeedScreen from './news-feed/MainNewsFeedScreen'
 import MyScreen from './my/MainMyScreen'
 
@@ -11,7 +12,8 @@ import TabBarIcon from '../../components/TabBarIcon'
 // import StarScreen from '../../screens/main/rank-stack/StarScreen'
 
 const RankStack = createStackNavigator({
-  mainRank: RankScreen
+  mainRankStar: MainRankStarScreen,
+  mainRank: MainRankScreen,
 })
 
 RankStack.navigationOptions = {

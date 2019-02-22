@@ -28,7 +28,7 @@ export default class App extends Component {
             </TouchableOpacity>
           </View>
       </View>
-      <BottomButton onPress={() => navigationService.navigate('curationColorPick')}>
+      <BottomButton onPress={() => navigationService.navigate('mainRankStar')}>
         프로필 사진 설정하기
       </BottomButton>
 

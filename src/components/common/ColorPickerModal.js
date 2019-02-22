@@ -32,7 +32,12 @@ class ColorPickerModal extends Component {
         <View style={styles.containerStyle}>
           <ColorPicker
             onColorSelected={color => alert(`Color selected: ${color}`)}
-            onColorChange={color => this.setColor(color)}
+            onColorChange={color => {
+              if (this.setTimeoutColorChange) clearTimeout(this.setTimeoutColorChange)
+              this.setTimeoutColorChange = setTimeout(() => {
+                this.setColor(color)
+              }, 300)
+            }}
             defaultColor={this.props.curationStore.color}
             style={styles.colorPickerStyle}
           />

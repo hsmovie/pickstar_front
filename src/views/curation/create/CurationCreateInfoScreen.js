@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Image, KeyboardAvoidingView, Platform } from 'react-native'
 import { White180pxHeader } from '../../../components/header'
 import { Input, BottomButton, ButtonWithImageAndText } from '../../../components/common'
 import navigationService from '../../../utils/navigationService'
@@ -32,12 +32,10 @@ export default class App extends Component {
     setStarGender(gender)
   }
 
-  go
-
   render() {
     const { starType, starGender, starName, setStarName } = this.props.curationStore
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : null}>
         <ScrollView style={styles.bodyContainerStyle}>
           <White180pxHeader text={"My스타의 페이지를\n만들어주세요!"} backArrow></White180pxHeader>
           <Text style={[styles.textStyle, {marginTop: 0}]}>유형 *</Text>
@@ -88,7 +86,7 @@ export default class App extends Component {
         <BottomButton onPress={() => navigationService.navigate('curationDatePick')}>
           다음
         </BottomButton>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }

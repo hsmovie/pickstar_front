@@ -8,7 +8,7 @@ import CurationNavigator from './curation/CurationNavigator'
 import { Provider } from "mobx-react";
 import stores from '../store'
 const navigatorConfig = {
-  initialRouteName: 'Curation',
+  initialRouteName: 'Main',
 }
 
 const SwitchNavigator = createSwitchNavigator({

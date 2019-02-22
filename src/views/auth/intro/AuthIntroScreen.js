@@ -94,7 +94,7 @@ const styles = {
     backgroundColor: '#f9696f'
   },
   titleBoxStyle: {
-    marginTop: 150,
+    marginTop: 80,
     marginBottom: 45,
   },
   textStyle: {

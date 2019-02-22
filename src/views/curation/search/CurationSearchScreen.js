@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {StyleSheet, Text, View, Image, FlatList, KeyboardAvoidingView} from 'react-native'
+import {StyleSheet, Text, View, Image, FlatList, ScrollView, SafeAreaView, KeyboardAvoidingView, Platform} from 'react-native'
 import { White180pxHeader } from '../../../components/header'
 import { Input, BottomButton } from '../../../components/common'
 import StarItem from './StarItem'
@@ -53,9 +53,9 @@ export default class App extends Component {
         )
       } else {
         return (
-          <KeyboardAvoidingView style={styles.progressCircleStyle} behavior="padding">
+          <View style={styles.progressCircleStyle}>
             <CreateStar />
-          </KeyboardAvoidingView>
+          </View>
         )
       }
     } else {
@@ -74,19 +74,26 @@ export default class App extends Component {
   render() {
     const { search, setSearch, selectedStars } = this.props.curationStore
     return (
-      <View style={styles.container}>
-        <White180pxHeader text={"응원할 스타를\n선택해주세요"} skip></White180pxHeader>
-        <Input
-          style={styles.inputStyle}
-          value={search}
-          onChangeText={setSearch}
-        />
-        {this.renderList()}
+      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : null}>
+        <ScrollView
+          style={styles.bodyContainerStyle}
+          onContentSizeChange={(width, height) => {
+            console.log(width, height)
+          }}
+        >
+          <White180pxHeader text={"응원할 스타를\n선택해주세요"} skip></White180pxHeader>
+          <Input
+            style={styles.inputStyle}
+            value={search}
+            onChangeText={setSearch}
+          />
+          {this.renderList()}
+        </ScrollView>
         <BottomButton
-          onPress={() => navigationService.navigate('mainRank')}
-          disabled={selectedStars.length === 0}
-        >{ selectedStars.length }명 선택완료</BottomButton>
-      </View>
+            onPress={() => navigationService.navigate('mainRank')}
+            disabled={selectedStars.length === 0}
+          >{ selectedStars.length }명 선택완료</BottomButton>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -119,7 +126,12 @@ const styles = StyleSheet.create({
     // borderWidth: 2,
   },
   progressCircleStyle: {
-    flex: 1,
+    minHeight: 250,
     justifyContent: 'center',
+    alignItems: 'center',
   },
+  bodyContainerStyle: {
+    flex: 1,
+    alignSelf: 'stretch',
+  }
 })
