@@ -8,6 +8,7 @@ import { ButtonWithFeedback, ModalPicker } from '../common'
 import { inject, observer } from 'mobx-react'
 import { width } from '../../utils/layout'
 import SwitchToggle from 'react-native-switch-toggle'
+import arrowDownImage from '../../assets/images/png/arrow_down.png'
 
 @inject("starDetailStore")
 @observer
@@ -156,14 +157,16 @@ class StarDetailHeader extends Component {
                     borderColor: '#e2e3e6',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    alignSelf: 'stretch'
+                    alignSelf: 'stretch',
+                    flexDirection: 'row'
                   }}
                   onPress={() => this.setState({modalVisible: true})}
                 >
-                  <Text>{this.props.starDetailStore.genderFilter}</Text>
+                  <Image source={arrowDownImage} style={{ marginRight: 10, }} />
+                  <Text style={{ color: '#4a4a4a', fontSize: 12 }}>{this.props.starDetailStore.genderFilter}</Text>
                 </TouchableOpacity>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-end', flex: 1, alignItems: 'center' }}>
-                  <Text style={{ fontSize: 12, marginRight: 10, }}>공식 피드만 보기</Text>
+                  <Text style={{ fontSize: 12, marginRight: 10, color: '#4a4a4a' }}>공식 피드만 보기</Text>
                   <SwitchToggle
                     switchOn={feedFilter}
                     onPress={() => this.props.starDetailStore.setFeedFilter(!this.props.starDetailStore.feedFilter)}
