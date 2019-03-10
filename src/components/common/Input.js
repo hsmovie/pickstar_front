@@ -57,11 +57,15 @@ const styles = {
   },
   inputStyle: {
     color: '#000',
-    paddingRight: 20,
-    paddingLeft: 20,
+    // paddingRight: 20,
+    // paddingLeft: 20,
+    // paddingTop: 0,
+    // paddingBottom: 0,
     fontSize: 14,
     lineHeight: 23,
     flex: 1,
+    borderWidth: 3,
+    height: 50,
   },
   searchImageStyle: {
     width: 20,

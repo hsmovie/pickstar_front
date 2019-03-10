@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
   inputStyle: {
+    height: 60,
     alignSelf: 'stretch',
     borderWidth: 2,
     marginRight: 20,

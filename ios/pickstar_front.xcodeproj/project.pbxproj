@@ -15,6 +15,8 @@
 		00E356F31AD99517003FC87E /* pickstar_frontTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* pickstar_frontTests.m */; };
 		04273A4AE0724062843D6BCA /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE0E4D9661F437580E70847 /* Feather.ttf */; };
 		06186626AE63469682935CCD /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7AF80CEC68245EB884EFCBB /* AntDesign.ttf */; };
+		086C21CF2234F95C0025D819 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086C21A02234F95C0025D819 /* JavaScriptCore.framework */; };
+		086C21D02234F95C0025D819 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086C21CE2234F95C0025D819 /* JavaScriptCore.framework */; };
 		08765CD2220FDB750094416A /* FacebookSDK in Resources */ = {isa = PBXBuildFile; fileRef = 08765CD1220FDB750094416A /* FacebookSDK */; };
 		08C67E1B2216B5BC0019EC5C /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C67DAD2216AEB30019EC5C /* libART.a */; };
 		11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
@@ -408,6 +410,8 @@
 		04893E7A5EE8429CBFC6B892 /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBSDK.a; sourceTree = "<group>"; };
 		05B659E89A67456F959AD85D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		0720B449F8C74C1B8B9B4009 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		086C21A02234F95C0025D819 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		086C21CE2234F95C0025D819 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		08765CD1220FDB750094416A /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FacebookSDK; sourceTree = "<group>"; };
 		08C67DA72216AEB30019EC5C /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
 		09D3D98F290D4D2F888FA05C /* libRCTBEEPickerManager.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTBEEPickerManager.a; sourceTree = "<group>"; };
@@ -465,6 +469,7 @@
 			files = (
 				08C67E1B2216B5BC0019EC5C /* libART.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
+				086C21CF2234F95C0025D819 /* JavaScriptCore.framework in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -478,6 +483,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				61BDB70F336546E48D051D9E /* libRNVectorIcons.a in Frameworks */,
 				137C332E41F048888C89C5D2 /* libBVLinearGradient.a in Frameworks */,
+				086C21D02234F95C0025D819 /* JavaScriptCore.framework in Frameworks */,
 				B06831EB423C490A9E57AB1C /* libRNGestureHandler.a in Frameworks */,
 				DD30D4533A2244D89DC0AD3D /* libRCTFBSDK.a in Frameworks */,
 			);
@@ -685,6 +691,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				086C21CE2234F95C0025D819 /* JavaScriptCore.framework */,
+				086C21A02234F95C0025D819 /* JavaScriptCore.framework */,
 				08765CD1220FDB750094416A /* FacebookSDK */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
