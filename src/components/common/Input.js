@@ -2,10 +2,27 @@ import React from 'react'
 import { TextInput, View, Image, TouchableOpacity } from 'react-native'
 import searchGrayImage from '../../assets/images/png/search_gray.png'
 
-const Input = ({ value, onChangeText, placeholder, secureTextEntry, style, noIcon, disabled }) => {
+const Input = ({ value, onChangeText, placeholder, secureTextEntry, style, noIcon, writerImageUrl, disabled }) => {
   const { inputStyle, containerStyle } = styles
   return (
     <View style={[containerStyle, style]}>
+      {
+        writerImageUrl
+        ?
+        <Image
+          source={{
+            uri: writerImageUrl,
+          }}
+          style={{
+            height: 24,
+            width: 24,
+            borderRadius: 15,
+            marginLeft: 12,
+          }}
+        />
+        :
+        null
+      }
       <TextInput
         secureTextEntry={secureTextEntry}
         placeholder={placeholder}
@@ -31,7 +48,7 @@ const Input = ({ value, onChangeText, placeholder, secureTextEntry, style, noIco
 
 const styles = {
   containerStyle: {
-    height: 50,
+    height: 40,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',

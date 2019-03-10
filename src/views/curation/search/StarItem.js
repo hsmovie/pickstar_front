@@ -55,7 +55,6 @@ class StarItem extends Component {
       }
     }
   }
-
   render() {
     const {
       containerStyle,

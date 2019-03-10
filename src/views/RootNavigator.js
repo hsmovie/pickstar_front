@@ -5,7 +5,7 @@ import navigationService from '../utils/navigationService'
 import MainTabNavigator from './main/MainTabNavigator'
 import AuthNavigator from './auth/AuthNavigator'
 import CurationNavigator from './curation/CurationNavigator'
-import { Provider } from "mobx-react";
+import { Provider } from "mobx-react"
 import stores from '../store'
 const navigatorConfig = {
   initialRouteName: 'Main',

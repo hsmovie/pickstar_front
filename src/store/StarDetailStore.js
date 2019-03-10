@@ -4,6 +4,7 @@ import { AsyncStorage } from 'react-native';
 export default class StarDetailStore {
   @observable genderFilter = '남자'
   @observable feedFilter = true
+  @observable comment = ''
 
   @action setGenderFilter (genderFilter) {
     this.genderFilter = genderFilter
@@ -11,5 +12,9 @@ export default class StarDetailStore {
 
   @action setFeedFilter (feedFilter) {
     this.feedFilter = feedFilter
+  }
+
+  @action setComment (comment) {
+    this.comment = comment
   }
 }
