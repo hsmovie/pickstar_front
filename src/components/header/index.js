@@ -1,2 +1,2 @@
 export * from './White180pxHeader'
-export * from './StarDetailHeader'
+export * from './StarDetailHeader/StarDetailHeader'

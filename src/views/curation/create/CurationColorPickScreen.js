@@ -82,7 +82,7 @@ export default class App extends Component {
             rightButtonFn={this.confirm}
           />
       </View>
-    );
+    )
   }
 }
 
@@ -124,4 +124,4 @@ const styles = StyleSheet.create({
     height: 56,
     width: 56,
   }
-});
+})
