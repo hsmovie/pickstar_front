@@ -32,7 +32,7 @@ export default class App extends Component {
     return <StarItem rankData={rankData} />
   }
 
-  renderList() {
+  renderList () {
     const { flatListStyle } = styles
     const allRankData = this.props.curationStore.stars.slice()
     if (allRankData.length === 0) {
@@ -72,27 +72,22 @@ export default class App extends Component {
   }
 
   render() {
-    const { search, setSearch, selectedStars } = this.props.curationStore
+    const { curationStore } = this.props
     return (
       <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : null}>
-        <ScrollView
-          style={styles.bodyContainerStyle}
-          onContentSizeChange={(width, height) => {
-            console.log(width, height)
-          }}
-        >
+        <ScrollView style={styles.bodyContainerStyle}>
           <White180pxHeader text={"응원할 스타를\n선택해주세요"} skip></White180pxHeader>
           <Input
             style={styles.inputStyle}
-            value={search}
-            onChangeText={setSearch}
+            value={curationStore.search}
+            onChangeText={(text) => curationStore.setSearch(text)}
           />
           {this.renderList()}
         </ScrollView>
         <BottomButton
             onPress={() => navigationService.navigate('mainRank')}
-            disabled={selectedStars.length === 0}
-          >{ selectedStars.length }명 선택완료</BottomButton>
+            disabled={curationStore.selectedStars.length === 0}
+          >{ curationStore.selectedStars.length }명 선택완료</BottomButton>
       </KeyboardAvoidingView>
     );
   }
@@ -121,6 +116,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginBottom: 5,
     borderRadius: 25,
+    borderWidth: 1,
   },
   flatListStyle: {
     // borderWidth: 2,

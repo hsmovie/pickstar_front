@@ -3,11 +3,13 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, } from 'react-native'
 import { width } from '../../../utils/layout'
 import arrowDownImage from '../../../assets/images/png/arrow_down.png'
 import { inject, observer } from 'mobx-react'
-import { Switch, ModalPicker, } from '../../common'
+import { Switch, } from '../../common'
+import { ModalPicker, } from '../../modal'
 
 @inject("starDetailStore")
 @observer
 export default class Foreground extends Component {
+  state = { modalVisible: false }
   closeModal = () => {
     this.setState({ modalVisible: false })
   }
@@ -16,8 +18,6 @@ export default class Foreground extends Component {
     this.props.starDetailStore.setGenderFilter(item)
     this.closeModal()
   }
-
-  state = { modalVisible: false }
   render () {
     return (
       <View style={styles.containerStyle}>

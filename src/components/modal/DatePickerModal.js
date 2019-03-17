@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Modal, TouchableWithoutFeedback } from 'react-native'
 import { width, height } from '../../utils/layout'
-import { ButtonWithoutFeedback } from './ButtonWithoutFeedback'
+import { ButtonWithoutFeedback } from '../common'
 import { Calendar, LocaleConfig } from 'react-native-calendars'
 
 class DatePickerModal extends Component {

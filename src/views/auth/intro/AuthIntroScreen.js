@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image } from 'react-native'
-import {
-  ButtonWithoutFeedback,
-  ConfirmModal,
-} from '../../../components/common'
+import { ButtonWithoutFeedback, } from '../../../components/common'
+import { ConfirmModal, } from '../../../components/modal'
 
 import navigationService from '../../../utils/navigationService'
 

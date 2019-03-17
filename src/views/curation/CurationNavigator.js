@@ -7,8 +7,8 @@ import CurationColorPickScreen from '../curation/create/CurationColorPickScreen'
 import CurationUploadImageScreen from '../curation/create/CurationUploadImageScreen'
 
 const CurationNavigator = createStackNavigator({
-  curationColorPick: CurationColorPickScreen,
   curationSearch: CurationSearchScreen,
+  curationColorPick: CurationColorPickScreen,
   curationCreateInfo: CurationCreateInfoScreen,
   curationUploadImage: CurationUploadImageScreen,
   curationDatePick: CurationDatePickScreen,

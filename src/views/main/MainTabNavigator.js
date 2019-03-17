@@ -8,7 +8,6 @@ import MainRankStarScreen from './rank/star/MainRankStarScreen'
 import NewsFeedScreen from './news-feed/MainNewsFeedScreen'
 import MyScreen from './my/MainMyScreen'
 
-import TabBarIcon from '../../components/TabBarIcon'
 import rank_tab from '../../assets/images/png/rank_tab.png'
 import rank_tab_pink from '../../assets/images/png/rank_tab_pink.png'
 import feed_tab from '../../assets/images/png/feed_tab.png'

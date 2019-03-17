@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native'
 import { White180pxHeader } from '../../../components/header'
-import { BottomButton, DatePickerModal, Input } from '../../../components/common'
+import { BottomButton, Input } from '../../../components/common'
+import { DatePickerModal, } from '../../../components/modal'
 import navigationService from '../../../utils/navigationService'
 
 import { inject, observer } from 'mobx-react'

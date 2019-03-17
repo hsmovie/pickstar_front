@@ -19,20 +19,9 @@ export default class CurationStore {
     }, 2000)
   }
 
-  async saveCuration () {
-    try {
-      await AsyncStorage.setItem('@curationStore:search', this.search)
-      await AsyncStorage.setItem('@curationStore:selectedStars', this.selectedStars)
-      await AsyncStorage.setItem('@curationStore:stars', this.stars)
-      await AsyncStorage.setItem('@curationStore:starType', this.starType)
-      await AsyncStorage.setItem('@curationStore:starGender', this.starGender)
-      await AsyncStorage.setItem('@curationStore:starName', this.starName)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  @action setSearch = (search) => {
+  @action setSearch (search) {
+    console.log(search)
+    console.log(this.search)
     this.search = search
     if (this.search === '') {
       this.stars = rankData.rank
@@ -64,19 +53,6 @@ export default class CurationStore {
     this.selectedStars = []
     this.search = ''
     this.stars = rankData.rank
-  }
-
-  @action async loadSearch () {
-    try {
-      this.search = await AsyncStorage.getItem('@curationStore:search')
-      this.selectedStars = await AsyncStorage.getItem('@curationStore:selectedStars')
-      this.stars = await AsyncStorage.getItem('@curationStore:stars')
-      this.starType = await AsyncStorage.getItem('@curationStore:starType')
-      this.starGender = await AsyncStorage.getItem('@curationStore:starGender')
-      this.starName = await AsyncStorage.getItem('@curationStore:starName')
-    } catch (error) {
-      console.log(error)
-    }
   }
 
   // @computed get accessSearch () {

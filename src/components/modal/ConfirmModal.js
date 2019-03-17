@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Modal, Dimensions } from 'react-native'
 import { width, height } from '../../utils/layout'
-import { ButtonWithoutFeedback } from './ButtonWithoutFeedback'
+import { ButtonWithoutFeedback } from '../common'
 
 class ConfirmModal extends Component {
   render() {
@@ -16,17 +16,6 @@ class ConfirmModal extends Component {
       des,
     } = this.props
 
-    const {
-      containerStyle,
-      titleTextBoxStyle,
-      buttonStyle,
-      buttonBoxStyle,
-      backgroundStyle,
-      buttonTextStyle,
-      titleTextStyle,
-      desTextStyle,
-    } = styles
-
     return (
       <Modal
         animationType="fade"
@@ -36,23 +25,23 @@ class ConfirmModal extends Component {
           console.log('Modal has been closed.')
         }}
       >
-        <View style={containerStyle}>
-          <View style={titleTextBoxStyle}>
-            <Text style={titleTextStyle}>{title}</Text>
-            <Text style={desTextStyle}>{des}</Text>
+        <View style={styles.containerStyle}>
+          <View style={styles.titleTextBoxStyle}>
+            <Text style={styles.titleTextStyle}>{title}</Text>
+            <Text style={styles.desTextStyle}>{des}</Text>
           </View>
-          <View style={buttonBoxStyle}>
+          <View style={styles.buttonBoxStyle}>
             <ButtonWithoutFeedback
               onPress={() => leftButtonFn()}
-              viewStyle={{ ...buttonStyle, borderRightWidth: 1 }}
-              textStyle={buttonTextStyle}
+              viewStyle={{ ...styles.buttonStyle, borderRightWidth: 1 }}
+              textStyle={styles.buttonTextStyle}
             >
               {leftButtonText}
             </ButtonWithoutFeedback>
             <ButtonWithoutFeedback
               onPress={() => rightButtonFn()}
-              viewStyle={{ ...buttonStyle, borderLeftWidth: 1 }}
-              textStyle={{ ...buttonTextStyle, color: '#fd5293' }}
+              viewStyle={{ ...styles.buttonStyle, borderLeftWidth: 1 }}
+              textStyle={{ ...styles.buttonTextStyle, color: '#fd5293' }}
             >
               {rightButtonText}
             </ButtonWithoutFeedback>
@@ -60,7 +49,7 @@ class ConfirmModal extends Component {
         </View>
 
         <ButtonWithoutFeedback
-          viewStyle={backgroundStyle}
+          viewStyle={styles.backgroundStyle}
           onPress={() => closeModalFn()}
         />
       </Modal>

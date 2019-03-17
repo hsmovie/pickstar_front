@@ -43,8 +43,6 @@ class ModalPicker extends Component {
               data={sampleData}
               renderItem={this.renderItem}
               keyExtractor={(dataRow) => dataRow.toString()}
-              // numColumns={3}
-              // style={{zIndex: 3,}}
               contentContainerStyle={styles.flatListStyle}
             />
           </View>
@@ -59,7 +57,7 @@ class ModalPicker extends Component {
 }
 const styles = {
   containerStyle: {
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignSelf: 'stretch',
     alignItems: 'center',
     flex: 1,
@@ -67,14 +65,12 @@ const styles = {
   },
   pickerContainerStyle: {
     zIndex: 3,
-    width: 300,
+    width: '100%',
     maxHeight: 300,
     backgroundColor: '#fff',
     borderRadius: 5,
   },
   flatListStyle: {
-    paddingTop: 20,
-    paddingBottom: 20,
   },
   backgroundStyle: {
     zIndex: 2,
@@ -85,8 +81,9 @@ const styles = {
     alignSelf: 'stretch',
   },
   buttonStyle: {
-    height: 50,
-    borderTopWidth: 1,
+    height: 60,
+    borderBottomWidth: 1,
+    borderColor: '#ececec',
     zIndex: 3,
     alignItems: 'center',
     justifyContent: 'center',

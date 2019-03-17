@@ -15,7 +15,9 @@ class CreateStar extends Component {
 
   pressButton() {
     navigationService.navigate('curationCreateInfo')
-    this.props.curationStore.resetSelectedStarsAndSearch()
+    setTimeout(() => {
+      this.props.curationStore.resetSelectedStarsAndSearch()
+    }, 300)
   }
 
   render() {

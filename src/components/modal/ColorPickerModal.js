@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, Modal } from 'react-native'
 import { width, height } from '../../utils/layout'
 import { ColorPicker, fromHsv } from 'react-native-color-picker'
-import { ButtonWithoutFeedback } from './ButtonWithoutFeedback'
+import { ButtonWithoutFeedback } from '../common'
 import { inject, observer } from 'mobx-react'
 
 @inject("curationStore")

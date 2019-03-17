@@ -134,7 +134,6 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-picker')
     implementation project(':react-native-fbsdk')
     implementation project(':react-native-gesture-handler')
     compile project(':react-native-linear-gradient')

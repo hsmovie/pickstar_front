@@ -3,22 +3,14 @@ import { TextInput, View, Image, TouchableOpacity } from 'react-native'
 import searchGrayImage from '../../assets/images/png/search_gray.png'
 
 const Input = ({ value, onChangeText, placeholder, secureTextEntry, style, noIcon, writerImageUrl, disabled }) => {
-  const { inputStyle, containerStyle } = styles
   return (
-    <View style={[containerStyle, style]}>
+    <View style={[styles.containerStyle, style]}>
       {
         writerImageUrl
         ?
         <Image
-          source={{
-            uri: writerImageUrl,
-          }}
-          style={{
-            height: 24,
-            width: 24,
-            borderRadius: 15,
-            marginLeft: 12,
-          }}
+          source={{ uri: writerImageUrl, }}
+          style={styles.leftImageStyle}
         />
         :
         null
@@ -27,7 +19,7 @@ const Input = ({ value, onChangeText, placeholder, secureTextEntry, style, noIco
         secureTextEntry={secureTextEntry}
         placeholder={placeholder}
         autoCorrect={false}
-        style={inputStyle}
+        style={styles.inputStyle}
         value={value}
         onChangeText={onChangeText}
         underlineColorAndroid="#fff"
@@ -37,9 +29,7 @@ const Input = ({ value, onChangeText, placeholder, secureTextEntry, style, noIco
         noIcon ? null
         :
         <TouchableOpacity style={styles.searchImageStyle}>
-          <Image
-            source={searchGrayImage}
-          />
+          <Image source={searchGrayImage} />
         </TouchableOpacity>
       }
     </View>
@@ -48,16 +38,22 @@ const Input = ({ value, onChangeText, placeholder, secureTextEntry, style, noIco
 
 const styles = {
   containerStyle: {
-    height: 40,
+    height: 50,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',
     borderColor: '#e2e3e6',
   },
+  leftImageStyle: {
+    height: 24,
+    width: 24,
+    borderRadius: 15,
+    marginLeft: 12,
+  },
   inputStyle: {
     color: '#000',
-    paddingRight: 10,
-    paddingLeft: 10,
+    paddingRight: 20,
+    paddingLeft: 20,
     fontSize: 14,
     flex: 1,
   },
